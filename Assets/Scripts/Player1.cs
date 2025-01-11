@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player1 : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
 	private void Update()
 	{
-		if (isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
+        if (isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
 		{
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 		}
