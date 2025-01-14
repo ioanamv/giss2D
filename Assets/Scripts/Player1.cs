@@ -13,6 +13,12 @@ public class Player1 : MonoBehaviour
 
     private bool isGrounded;
     private Rigidbody2D rb;
+    private float speedMultiplier = 1;
+
+    public void SetSpeedMultiplier(float multiplier)
+    {
+        speedMultiplier = multiplier;
+    }
 
     private void Start()
     {
@@ -31,7 +37,7 @@ public class Player1 : MonoBehaviour
 			moveInput = 1;
 		}
 
-		rb.velocity=new Vector2(moveInput*speed, rb.velocity.y);
+		rb.velocity=new Vector2(moveInput*speed*speedMultiplier, rb.velocity.y);
 		isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadious, groundMask);
 	}
 
